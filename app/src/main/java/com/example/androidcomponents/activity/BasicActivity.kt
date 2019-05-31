@@ -18,7 +18,7 @@ class BasicActivity : AppCompatActivity(), Communicator {
         val fragTag = "fragment_left"
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fl_fragment_left, fragmentLeft, fragTag)
+                .replace(R.id.fl_fragment_left, fragmentLeft!!, fragTag)
                 .addToBackStack(null)
                 .commit()
 
@@ -26,7 +26,7 @@ class BasicActivity : AppCompatActivity(), Communicator {
         val fragTag2 = "fragment_right"
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fl_fragment_right, fragmentRight, fragTag2)
+                .replace(R.id.fl_fragment_right, fragmentRight!!, fragTag2)
                 .addToBackStack(null)
                 .commit()
 

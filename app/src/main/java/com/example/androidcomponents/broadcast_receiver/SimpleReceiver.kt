@@ -8,9 +8,9 @@ import android.widget.Toast
 class SimpleReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action === "com.example.simplebroadcastreceiver.CUSTOM_INTENT1") {
+        if (intent.action == "com.example.simplebroadcastreceiver.CUSTOM_INTENT1") {
             Toast.makeText(context, "Intent 1 Detected.", Toast.LENGTH_SHORT).show()
-        } else if (intent.action === "com.example.simplebroadcastreceiver.CUSTOM_INTENT2") {
+        } else if (intent.action == "com.example.simplebroadcastreceiver.CUSTOM_INTENT2") {
             Toast.makeText(context, "Intent 2 Detected.", Toast.LENGTH_SHORT).show()
         }
     }

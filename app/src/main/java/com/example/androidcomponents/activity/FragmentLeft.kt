@@ -27,7 +27,7 @@ class FragmentLeft : Fragment() {
         return inflater.inflate(R.layout.fragment_left, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_increment.setOnClickListener { com.increment() }
         btn_decrement.setOnClickListener { com.decrement() }

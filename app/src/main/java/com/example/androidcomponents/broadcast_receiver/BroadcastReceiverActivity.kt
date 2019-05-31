@@ -16,14 +16,14 @@ class BroadcastReceiverActivity : AppCompatActivity() {
 
     // broadcast a custom intent.
     fun broadcastIntent1(view: View) {
-        val intent = Intent()
+        val intent = Intent(this, SimpleReceiver::class.java)
         intent.action = "com.example.simplebroadcastreceiver.CUSTOM_INTENT1"
         sendBroadcast(intent)
     }
 
     // broadcast a custom intent.
     fun broadcastIntent2(view: View) {
-        val intent = Intent()
+        val intent = Intent(this, SimpleReceiver::class.java)
         intent.action = "com.example.simplebroadcastreceiver.CUSTOM_INTENT2"
         sendBroadcast(intent)
     }

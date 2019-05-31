@@ -15,7 +15,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
@@ -33,19 +33,16 @@
         <activity android:name=".content_provider.views.ContentProviderActivity"
             android:parentActivityName=".MainActivity"/>
 
-
         <service android:name=".service.SimpleService"/>
         <service android:name=".service.BoundService"/>
         <service android:name=".service.BasicIntentService"/>
 
-
         <receiver android:name=".broadcast_receiver.SimpleReceiver">
             <intent-filter>
-                <action android:name="com.example.simplebroadcastreceiver.CUSTOM_INTENT1"></action>
-                <action android:name="com.example.simplebroadcastreceiver.CUSTOM_INTENT2"></action>
+                <action android:name="com.example.simplebroadcastreceiver.CUSTOM_INTENT1"/>
+                <action android:name="com.example.simplebroadcastreceiver.CUSTOM_INTENT2"/>
             </intent-filter>
         </receiver>
-
 
         <provider
             android:authorities="com.example.androidcomponents"

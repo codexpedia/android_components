@@ -26,7 +26,7 @@ class FragmentVersionDetail : Fragment(), LoaderManager.LoaderCallbacks<Cursor> 
     private var tvApiLevel: TextView? = null
     private var tvUri: TextView? = null
     private var tvVersionDescription: TextView? = null
-    private var mUri: Uri? = null
+    private lateinit var mUri: Uri
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +34,8 @@ class FragmentVersionDetail : Fragment(), LoaderManager.LoaderCallbacks<Cursor> 
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater!!.inflate(R.layout.fragment_version_detail, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_version_detail, container, false)
         tvVersionName = rootView.findViewById<View>(R.id.tv_version_name) as TextView
         tvVersionCode = rootView.findViewById<View>(R.id.tv_version_code) as TextView
         tvApiLevel = rootView.findViewById<View>(R.id.tv_api_level) as TextView
@@ -59,13 +59,13 @@ class FragmentVersionDetail : Fragment(), LoaderManager.LoaderCallbacks<Cursor> 
             selection = VersionsContract.VersionEntry._ID
             selectionArgs = arrayOf(mPosition.toString())
         }
-        return CursorLoader(activity,
+        return CursorLoader(activity!!,
                 mUri, null,
                 selection,
                 selectionArgs, null)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
 
